@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public interface UserService {
     User saveUser(User user);
-    List<User> getAllUsers(); //zelf toegevoegd
+    List<User> getAllUsers();
     //generate the rest`
     User findById(Long id);
     User findByEmail(String email);

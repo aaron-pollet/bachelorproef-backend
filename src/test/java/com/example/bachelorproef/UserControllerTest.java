@@ -14,18 +14,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 public class UserControllerTest {
 
-        //generate a private field for the user controller
         @Autowired
         UserController userController;
 
-        //generate a test method to test the saveUser method
         @Test
         void testSaveUser() {
-            //generate a new user object
             User user = new User("John", "john@email.com", "password");
-            //save the user object to the database
             userController.saveUser(user);
-            //check if the user object is saved to the database
             assertEquals(userController.getUserById(user.getId()), user);    //aanpassing findById naar getUserById
         }
 
