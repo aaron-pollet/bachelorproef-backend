@@ -13,15 +13,15 @@ class UserTest {
         //generate a new user object
         //User user = new User();
         //generate a new user object with the user id, user name, user email and user password
-        User user1 = new User("John", ""); //zelf haakje sluiten?
+        User user1 = new User("John", "",""); //zelf haakje sluiten?
         //generate a new user object with the user id, user name, user email and user password
-        User user2 = new User("John", "john@email.com"); //zelf haakje sluiten? + email toevoegen
+        User user2 = new User("John", "john@email.com", "password"); //zelf haakje sluiten? + email toevoegen
         //generate a new user object with the user id, user name, user email and user password
-        User user3 = new User("Bert", "bert@test.be"); //zelf haakje sluiten? + email + naam verandert
+        User user3 = new User("Bert", "bert@test.be" ,"password"); //zelf haakje sluiten? + email + naam verandert
         //generate a new user object with the user id, user name, user email and user password
-        User user4 = new User("", ""); //zelf haakje sluiten? zelf de parameter name leeggelaten
+        User user4 = new User("", "", ""); //zelf haakje sluiten? zelf de parameter name leeggelaten
         //toevoegen van een user met dezelfde paramatere
-        User user5 = new User("John", "john@email.com");
+        User user5 = new User("John", "john@email.com", "password");
 
         //copilot genereert 4 verschillende users, maar telkenes met dezelfde waarden, op die manier kan je geen
         //verschillende objecten testen

@@ -31,10 +31,10 @@ public class User {
     public User() {
     }
     //generate a public constructor for the user class with the user id, user name, user email and user password
-    public User(String name, String email /*, String password*/) {
+    public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
-        //this.password = password;
+        this.password = password;
     }
 
     //generate a public setter method for the user id

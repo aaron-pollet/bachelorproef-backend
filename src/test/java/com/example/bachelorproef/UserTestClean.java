@@ -11,10 +11,10 @@ class UserTestClean {
     @Test
     void testUser() {
 
-        User user1 = new User("John", "");
-        User user2 = new User("John", "john@email.com");
-        User user3 = new User("Bert", "bert@test.be");
-        User user4 = new User("", "");
+        User user1 = new User("John", "", "");
+        User user2 = new User("John", "john@email.com", "password");
+        User user3 = new User("Bert", "bert@test.be", "password");
+        User user4 = new User("", "", "");
 
         assertEquals(user1.getName(), "John");
         assertEquals(user1.getEmail(), "");

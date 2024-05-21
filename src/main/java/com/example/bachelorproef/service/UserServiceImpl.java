@@ -2,6 +2,7 @@ package com.example.bachelorproef.service;
 
 import com.example.bachelorproef.model.User;
 import com.example.bachelorproef.repository.UserRepository;
+import com.example.bachelorproef.util.PasswordHashingUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
@@ -17,10 +18,27 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     //generate a public method to save a user to the database
-    public User saveUser(User user) {
+/*    public User saveUser(User user) {
         userRepository.save(user);
         return user;
+    }*/
+    //rewrite the save method to hash the user's password before saving it in the database using a password hashing method
+    /*public User saveUser(User user) {
+        //hash the user's password before saving it in the database
+        user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
+        userRepository.save(user);
+        return user;
+    }*/
+
+    //rewrite the save method to hash the user's password before saving it in the database using a password hashing utility class
+    public User saveUser(User user) {
+        //hash the user's password before saving it in the database
+        user.setPassword(PasswordHashingUtil.hashPassword(user.getPassword()));
+        userRepository.saveAndFlush(user);
+        return user;
     }
+
+
     @Override
     public User findById(Long id) {
 

@@ -37,41 +37,33 @@ public class UserController {
     //generate a public method to get a user by email
     @GetMapping("/users/email/{email}")
     public User getUserByEmail(@PathVariable String email) {
-        return userService.findByEmail(email);
-    }
-}
-
-/*
-    //generate a public method to get a user by email
-    @GetMapping("/users/email/{email}")
-    public User getUserByEmail(@PathVariable String email) {
-        return userService.getUserByEmail(email);
+        return userService.findByEmail(email); //aangepast getUserByEmail -> findByEmail
     }
 
     //generate a public method to get a user by email and password
     @GetMapping("/users/email/{email}/password/{password}")
     public User getUserByEmailAndPassword(@PathVariable String email, @PathVariable String password) {
-        return userService.getUserByEmailAndPassword(email, password);
+        return userService.findByEmailAndPassword(email, password); // aangepast getUserByEmailAndPassword -> findByEmailAndPassword
     }
 
     //generate a public method to get a user by name
     @GetMapping("/users/name/{name}")
     public User getUserByName(@PathVariable String name) {
-        return userService.getUserByName(name);
+        return userService.findByName(name); //aangepast getUserByName -> findByName
     }
 
     //generate a public method to get a user by name and password
     @GetMapping("/users/name/{name}/password/{password}")
     public User getUserByNameAndPassword(@PathVariable String name, @PathVariable String password) {
-        return userService.getUserByNameAndPassword(name, password);
+        return userService.findByNameAndPassword(name, password); //aangepast getUserByNameAndPassword -> findByNameAndPassword
     }
 
     //generate a public method to delete a user by id
     @DeleteMapping("/users/{id}")
     public void deleteUserById(@PathVariable Long id) {
-        userService.deleteUserById(id);
+        userService.deleteById(id); // aangepast deleteUserById -> deleteById
     }
-/*
+
 
     //TODO verwijderen dient als voorbeeld
     //generate method based on these service methods: "
@@ -84,10 +76,9 @@ public class UserController {
 //    public List<User> getUserTheNativeWay(String name){
 //        return (List<User>) userService.findAllByNameNative(name);
 //    }
-
-    @GetMapping("/sqlinjection")
-    public User getUserBySqlInjection(String name){
-        return userService.findBySqlInjection(name);
-    }
+//
+//    @GetMapping("/sqlinjection")
+//    public User getUserBySqlInjection(String name){
+//        return userService.findBySqlInjection(name);
+//    }
 }
-*/

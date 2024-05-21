@@ -49,14 +49,14 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 
 
-    //TODO verwijderen of aanpassen. Dit dient als voorbeeld hoe het niet moet, denk ik
-    //verkeerde query die SQL-injection veroorzaakt
-    //dit is niet gegenereerd door Github Copilot
-    @Query("select u from User u where u.name = :name")
-    List<User> findByNameWrong(@Param("name") String name);
-
-    //verkeerde query die SQL-injection veroorzaakt
-    //dit is niet gegenereerd door Github Copilot / ik denk dat dit de zaak oplost
-    @Query(value = "select u from User u where u.name = :name and u.password = :password", nativeQuery = true)
-    User findByNameNative(@Param("name") String name);
+//    //TODO verwijderen of aanpassen. Dit dient als voorbeeld hoe het niet moet, denk ik
+//    //verkeerde query die SQL-injection veroorzaakt
+//    //dit is niet gegenereerd door Github Copilot
+//    @Query("select u from User u where u.name = :name")
+//    List<User> findByNameWrong(@Param("name") String name);
+//
+//    //verkeerde query die SQL-injection veroorzaakt
+//    //dit is niet gegenereerd door Github Copilot / ik denk dat dit de zaak oplost
+//    @Query(value = "select u from User u where u.name = :name and u.password = :password", nativeQuery = true)
+//    User findByNameNative(@Param("name") String name);
 }

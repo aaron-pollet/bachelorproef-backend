@@ -22,7 +22,7 @@ public class UserControllerTest {
         @Test
         void testSaveUser() {
             //generate a new user object
-            User user = new User("John", "");
+            User user = new User("John", "john@email.com", "password");
             //save the user object to the database
             userController.saveUser(user);
             //check if the user object is saved to the database

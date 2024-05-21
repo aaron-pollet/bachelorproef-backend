@@ -37,7 +37,7 @@ public class UserRepositoryTest {
     @Test
     void testSaveUser() {
         //generate a new user object
-        User user = new User("John", "");
+        User user = new User("John", "", "");
         //save the user object to the database
         userRepository.save(user);
         //check if the user object is saved to the database
@@ -49,15 +49,15 @@ public class UserRepositoryTest {
     @Test
     void testGetAllUsers() {
         //generate a new user object
-        User user = new User("John", "");
+        User user = new User("John", "john@email.com", "password");
         //save the user object to the database
         userRepository.save(user);
         //generate a new user object
-        User user2 = new User("Bert", "");
+        User user2 = new User("Bert", "bert@test.be", "password");
         //save the user object to the database
         userRepository.save(user2);
         //generate a new user object
-        User user3 = new User("John", "");
+        User user3 = new User("John", "", "");
         //save the user object to the database
         userRepository.save(user3);
         //get all users from the database
